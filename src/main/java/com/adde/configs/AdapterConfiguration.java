@@ -11,8 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-public class ProviderConfiguration {
-
+public class AdapterConfiguration {
 
     @Bean
     public Map<String, ProviderAdapter> providerAdapters(
