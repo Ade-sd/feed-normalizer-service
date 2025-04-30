@@ -4,6 +4,8 @@ import com.adde.model.Message;
 import com.adde.model.OddsChangeMessage;
 import com.adde.model.SettlementMessage;
 import com.adde.model.enums.OutcomeType;
+import com.adde.model.enums.SystemError;
+import com.adde.model.exceptions.SystemException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -53,7 +55,7 @@ public class AlphaProviderAdapter implements ProviderAdapter {
 
             return message;
         } catch (Exception e) {
-            throw new RuntimeException("Failed to normalize Alpha provider message", e);
+            throw new SystemException(SystemError.BAD_REQUEST, "Failed to normalize Alpha provider message", 1235);
         }
     }
 }
