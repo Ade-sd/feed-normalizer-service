@@ -1,5 +1,6 @@
 package com.adde.adapter;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
@@ -9,6 +10,7 @@ public class ProviderAdapterFactory {
 
     private final Map<String, ProviderAdapter> adapters;
 
+    @Autowired
     public ProviderAdapterFactory(Map<String, ProviderAdapter> adapters) {
         this.adapters = adapters;
     }
@@ -20,7 +22,6 @@ public class ProviderAdapterFactory {
         }
         return adapter;
     }
-
 
 
 }
